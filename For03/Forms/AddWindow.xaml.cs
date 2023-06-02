@@ -56,7 +56,7 @@ namespace For03.Forms
 
             using (var ms = new MemoryStream(imageew))
                 {
-                    imagee.Image = new 
+                    //imagee.Image = new 
                 }
             }
         }
