@@ -1,0 +1,17 @@
+﻿<Window x:Class="For03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:For03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="200"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Button Height="92" Width="200" VerticalAlignment="Top" Content="Администратор" x:Name="btn_admin" Click="btn_admin_Click" />
+        <Button Height="91" Width="200" VerticalAlignment="Bottom" Content="Клиент" x:Name="btn_client" Click="btn_client_Click" />
+    </Grid>
+</Window>

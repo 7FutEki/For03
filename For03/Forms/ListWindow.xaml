@@ -1,0 +1,44 @@
+﻿<Window x:Class="For03.Forms.ListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:For03.Forms"
+        mc:Ignorable="d"
+        Title="ListWindow" Height="450" Width="800"
+         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Grid.Row="0" ItemsSource="{Binding TapService}" SelectedItem="{Binding Service}" x:Name="ListService">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="Название товара"/>
+                            <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Цена товара"/>
+                            <TextBlock Text="{Binding Path=Price}"/>
+                            <TextBlock Text="Описание товара"/>
+                            <TextBlock Text="{Binding Path=Descrtiption}"/>
+                            <TextBlock Text="Скидка"/>
+                            <TextBlock Text="{Binding Path=Discount }"/>
+                        <Image  x:Name="SImage" Source="{Binding Path=ServiceImage}" Width="100" Height="100" Margin="0 10 150 0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        
+
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="btn_add" Margin="10, 0, 10, 0" Width="150" Content="Добавить" Click="btn_add_Click"/>
+            <Button x:Name="btn_edit" Margin="0,0,10,0" Width="150" Content="Редактировать" Click="btn_edit_Click"/>
+            <Button x:Name="btn_dlt" Margin="0,0,10,0" Width="150" Content="Удалить" Click="btn_dlt_Click"/>
+            <Button x:Name="btn_exit" Margin="0,0,10,0" Width="150" Content="Выйти" Click="btn_exit_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

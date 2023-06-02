@@ -1,0 +1,39 @@
+﻿<Window x:Class="For03.Forms.ServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:For03.Forms"
+        mc:Ignorable="d"
+        Title="ServiceWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+       
+            <ListBox Grid.Row="0" ItemsSource="{Binding TapService}" SelectedItem="{Binding Service}" x:Name="ListService">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="Название товара"/>
+                            <TextBlock Text="{Binding Path=Name}" TextWrapping="Wrap"/>
+                            <TextBlock Text="Цена товара"/>
+                            <TextBlock Text="{Binding Path=Price}"/>
+                            <TextBlock Text="Описание товара"/>
+                            <TextBlock Text="{Binding Path=Descrtiption}"/>
+                            <Image  x:Name="SImage" Source="{Binding Path=ServiceImage}" Width="100" Height="100" Margin="0 10 150 0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        
+
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="btn_enroll"  Width="200" Content="Запись" Click="btn_enroll_Click"/>
+            <Button x:Name="btn_exit"  Margin="10,0,10,0" Width="200" Content="Выйти" Click="btn_exit_Click"/>
+        </StackPanel>
+    
+    </Grid>
+</Window>
